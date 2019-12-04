@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 100;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.gallery, .gallery2 {
+  --max-width: 75vw;
+  --aspect-ratio: 1.333;
+  --gallery-size: calc(var(--max-width) / 2 * var(--aspect-ratio));
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: var(--gallery-size) 50px;
+  grid-template-areas: "thumbnails gallery" "thumbnails controls";
+  height: auto;
+  width: 100%;
+  max-width: var(--max-width);
+  overflow: hidden;
+}
+
+@media (max-width: 800px) {
+  .gallery, .gallery2 {
+    --max-width: 60vw;
+    --gallery-size: calc(var(--max-width) * var(--aspect-ratio));
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--gallery-size) 50px auto;
+    grid-template-areas: "gallery" "controls" "thumbnails";
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery, .gallery2 {
+    --max-width: 75vw;
+  }
+}
+
+.gallery-items {
+  grid-area: gallery;
+  position: relative;
+}
+
+.gallery-items .g-item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0s 1.5s, opacity 1.5s;
+}
+
+.gallery-items .g-item.active {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.gallery-controls {
+  grid-area: controls;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.gallery-thumbnails {
+  --columns: 5;
+  grid-area: thumbnails;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(auto, 50px));
+  grid-template-rows: repeat(4, minmax(auto, 50px));
+  grid-auto-rows: 50px;
+  grid-gap: 20px;
+  margin: auto;
+  padding: 0;
+}
+
+@media (max-width: 800px) {
+  .gallery-thumbnails {
+    --columns: 6;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-thumbnails {
+    --columns: 4;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-thumbnails {
+    --columns: 3;
+  }
+}
+
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: rgba(0, 0, 0, 0.5);
+}
