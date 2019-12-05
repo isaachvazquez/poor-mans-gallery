@@ -1,4 +1,4 @@
-# PoorMansGallery
+# SuperSimpleGallery
 
 
 ## Markup
@@ -16,7 +16,7 @@
 ## JS
 
 ```
-const mygallery = new PoorMansGallery();
+const mygallery = new SuperSimpleGallery();
 mygallery.init({});
 ```
 
@@ -27,4 +27,4 @@ mygallery.init({});
 * activeItemClass: (default: '.active')
 * speed (default: 4000)
 * autostart (default: true)
-* callback (default: console.log(e), logs the PMGevent with details 'type', 'currentIndex', 'itemCount')
+* callback (default: console.log(e), logs the SSGevent with details 'type', 'currentIndex', 'itemCount')

@@ -1,4 +1,4 @@
-function PoorMansGallery() {
+function SuperSimpleGallery() {
   'use strict';
 
   let _options, _gallery, _activeItem, _activeIndex, _items, timer, _currentIndex = 1, _galleryItems = [], _defaults = {
@@ -16,7 +16,7 @@ function PoorMansGallery() {
     _options = typeof options === 'object' ? { ..._defaults, ...options } : { ..._defaults };
 
     _gallery = document.querySelector(_options.containerSelector);
-    _gallery.addEventListener('PMGevent', _options.callback, false);
+    _gallery.addEventListener('SSGevent', _options.callback, false);
     _items = document.querySelectorAll(`${_options.containerSelector} ${_options.itemSelector}`);
     _activeItem = document.querySelector(`${_options.containerSelector} ${_options.activeItemClass}`);
     _items.forEach(i => _galleryItems.push(i));
@@ -41,7 +41,7 @@ function PoorMansGallery() {
 
 
     // Dispatch the event
-    const event = new CustomEvent('PMGevent', { detail: { type: direction, currentIndex: _getCurrentIndex(), itemCount: _galleryItems.length } });
+    const event = new CustomEvent('SSGevent', { detail: { type: direction, currentIndex: _getCurrentIndex(), itemCount: _galleryItems.length } });
     _gallery.dispatchEvent(event);
 
     if (stopGallery) {
