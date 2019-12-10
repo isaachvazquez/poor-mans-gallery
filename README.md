@@ -28,3 +28,4 @@ mygallery.init({});
 * speed (default: 4000)
 * autostart (default: true)
 * callback (default: console.log(e), logs the SSGevent with details 'type', 'currentIndex', 'itemCount')
+* emitEvents (boolean - default: false)

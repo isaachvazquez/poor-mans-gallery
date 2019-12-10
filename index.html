@@ -34,6 +34,7 @@
   <script src="src/ssg.js"></script>
   <script>
     const mygallery = new SuperSimpleGallery();
+    const gallery = document.querySelector('.gallery');
     const galleryStatus = document.querySelector('.gallery .gallery-controls span');
     const prevButton = document.querySelector('.gallery .prev-button');
     const nextButton = document.querySelector('.gallery .next-button');
@@ -43,12 +44,15 @@
       speed: 3000,
       callback: (e) => {
         galleryStatus.innerHTML = `${e.detail.currentIndex}/${e.detail.itemCount}`;
-      }
+      },
+      emitEvents: true
     });
 
     prevButton.addEventListener('click', () => { mygallery.updateGallery('prev', true) });
     nextButton.addEventListener('click', () => { mygallery.updateGallery('next', true) });
     thumbnails.forEach(t => t.addEventListener('click', () => { mygallery.updateGallery('next', true, t.dataset.index) }));
+
+    gallery.addEventListener('SSGevent', e => console.log(e));
 
   </script>
 </body>

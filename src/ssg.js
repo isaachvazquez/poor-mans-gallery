@@ -7,7 +7,8 @@ function SuperSimpleGallery() {
     containerSelector: '.gallery',
     itemSelector: '.g-item',
     activeItemClass: '.active',
-    callback: (e) => { console.log(e) }
+    callback: (e) => {},
+    emitEvents: false
   }
 
   // Public
@@ -42,7 +43,7 @@ function SuperSimpleGallery() {
 
     // Dispatch the event
     const event = new CustomEvent('SSGevent', { detail: { type: direction, currentIndex: _getCurrentIndex(), itemCount: _galleryItems.length } });
-    _gallery.dispatchEvent(event);
+    if(_options.emitEvents) _gallery.dispatchEvent(event);
 
     if (stopGallery) {
       clearTimeout(timer);
