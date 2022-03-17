@@ -4,8 +4,8 @@ function SuperSimpleGallery() {
   let _options, _gallery, _activeItem, _activeIndex, _items, timer, _currentIndex = 1, _galleryItems = [], _defaults = {
     speed: 4000,
     autostart: true,
-    containerSelector: '.gallery',
-    itemSelector: '.g-item',
+    containerSelector: '.SSG',
+    itemSelector: '.ssg-item',
     activeItemClass: '.active',
     callback: (e) => {},
     emitEvents: false

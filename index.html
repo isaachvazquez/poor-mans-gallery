@@ -9,20 +9,20 @@
 </head>
 <body>
   <h1>Super Simple Gallery</h1>
-  <div class="gallery">
-    <div class="gallery-items">
-      <img alt="" class="g-item active" src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
-      <img alt="" class="g-item" src="https://images.unsplash.com/photo-1540206395-68808572332f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
-      <img alt="" class="g-item" src="https://images.unsplash.com/photo-1439853949127-fa647821eba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
-      <img alt="" class="g-item" src="https://images.unsplash.com/photo-1550236520-7050f3582da0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
-      <img alt="" class="g-item" src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
+  <div class="SSG">
+    <div class="SSG-items">
+      <img alt="" class="ssg-item active" src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
+      <img alt="" class="ssg-item" src="https://images.unsplash.com/photo-1540206395-68808572332f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
+      <img alt="" class="ssg-item" src="https://images.unsplash.com/photo-1439853949127-fa647821eba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
+      <img alt="" class="ssg-item" src="https://images.unsplash.com/photo-1550236520-7050f3582da0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
+      <img alt="" class="ssg-item" src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
     </div>
-    <div class="gallery-controls">
+    <div class="SSG-controls">
       <button class="prev-button">Previous</button>
       <span>1/12</span>
       <button class="next-button">Next</button>
     </div>
-    <div class="gallery-thumbnails">
+    <div class="SSG-thumbnails">
       <img class="thumbnail js-G-thumb" data-index="1" src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
       <img class="thumbnail js-G-thumb" data-index="2" src="https://images.unsplash.com/photo-1540206395-68808572332f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
       <img class="thumbnail js-G-thumb" data-index="3" src="https://images.unsplash.com/photo-1439853949127-fa647821eba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
@@ -34,11 +34,11 @@
   <script src="src/ssg.js"></script>
   <script>
     const mygallery = new SuperSimpleGallery();
-    const gallery = document.querySelector('.gallery');
-    const galleryStatus = document.querySelector('.gallery .gallery-controls span');
-    const prevButton = document.querySelector('.gallery .prev-button');
-    const nextButton = document.querySelector('.gallery .next-button');
-    const thumbnails = document.querySelectorAll('.gallery .js-G-thumb');
+    const gallery = document.querySelector('.SSG');
+    const galleryStatus = document.querySelector('.SSG .SSG-controls span');
+    const prevButton = document.querySelector('.SSG .prev-button');
+    const nextButton = document.querySelector('.SSG .next-button');
+    const thumbnails = document.querySelectorAll('.SSG .js-G-thumb');
 
     mygallery.init({
       speed: 3000,
